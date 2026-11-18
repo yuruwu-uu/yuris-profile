@@ -1,0 +1,297 @@
+:root {
+  --green: #2e6119;
+  --cream: #f5f7e5;
+  --brown: #70491f;
+  --tan: #d8b88a;
+  --tan-light: #ead0a5;
+  --background: #d8c09a;
+}
+
+/* page */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 8vh 6vw;
+  color: var(--brown);
+  font-family: "Nunito Sans", sans-serif;
+}
+
+/* main card */
+.card {
+  width: min(1100px, 100%);
+  overflow: hidden;
+  background: var(--cream);
+  border-radius: 16px;
+  box-shadow: 8px 8px 0 rgba(112, 73, 31, 0.85);
+}
+
+/* header */
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-height: 94px;
+  padding: 12px 36px;
+  color: var(--cream);
+  background: var(--green);
+  border-radius: 16px 16px 0 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+.header::before {
+  position: absolute;
+  top: -31px;
+  left: 0;
+  width: 34%;
+  height: 32px;
+  content: "";
+  background: var(--green);
+  border-radius: 14px 0 0;
+  clip-path: polygon(0 0, 84% 0, 100% 100%, 0 100%);
+}
+
+.label {
+  position: relative;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* profile content */
+.content {
+  display: grid;
+  grid-template-columns: 0.9fr 1.35fr;
+  align-items: center;
+  gap: 28px;
+  padding: 48px 6% 34px;
+}
+
+/* profile picture */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+
+.profile img {
+  display: block;
+  width: min(100%, 350px);
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.profile:hover .profile-pic {
+  transform: translateY(-4px) rotate(-5deg);
+}
+
+/* profile caption */
+.profile-caption {
+  width: 250px;
+  max-width: 100%;
+  margin-top: 18px;
+  text-align: justify;
+  color: var(--brown);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.profile-caption p {
+  margin: 4px 0;
+}
+
+/* biography */
+.bio {
+  min-width: 0;
+}
+
+.intro {
+  margin: 0 0 8px;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.45;
+}
+
+.intro strong {
+  font-weight: 700;
+  font-family: "Quicksand", sans-serif;
+}
+
+.intro span {
+  padding: 0 5px;
+}
+
+.intro a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.postmark {
+  margin: 10px 0 26px;
+  color: #99784a;
+  font-size: clamp(18px, 1.6vw, 28px);
+  letter-spacing: 3px;
+}
+
+/* headings */
+h1 {
+  margin: 20px 0;
+  font-size: clamp(22px, 2.2vw, 30px);
+}
+
+h1 span {
+  margin-left: 7px;
+}
+
+/* biography text */
+.bio p:not(.intro) {
+  margin: 0 0 2px;
+  font-size: clamp(18px, 1.9vw, 27px);
+  line-height: 1.7;
+}
+
+.heart {
+  margin-right: 4px;
+  font-size: 1.1em;
+}
+
+/* social media */
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 6% 18px;
+}
+
+.stamp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.stamp img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.stamp span {
+  color: var(--brown);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.stamp:hover,
+.stamp:focus-visible {
+  transform: translateY(-4px) rotate(-3deg);
+}
+
+.stamp:hover img {
+  transform: rotate(-5deg);
+}
+
+/* footer */
+.footer {
+  height: 44px;
+  background: var(--green);
+  border-radius: 0 0 16px 16px;
+}
+
+/* mobile layout */
+@media (max-width: 600px) {
+  body {
+    padding: 48px 16px;
+  }
+
+  .header {
+    min-height: 78px;
+    padding: 10px 20px;
+  }
+
+  .header::before {
+    top: -24px;
+    width: 58%;
+    height: 25px;
+  }
+
+  .label {
+    font-size: 20px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 26px 22px 16px;
+  }
+
+  .profile img {
+    width: min(65%, 230px);
+  }
+
+  .profile-caption {
+    width: min(100%, 250px);
+    margin-top: 14px;
+    font-size: 13px;
+  }
+
+  .intro {
+    font-size: clamp(20px, 5vw, 27px);
+  }
+
+  .postmark {
+    margin-bottom: 18px;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  h1 {
+    margin-bottom: 12px;
+    font-size: 23px;
+  }
+
+  .bio p:not(.intro) {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .socials {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 14px 18px;
+  }
+
+  .stamp img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .footer {
+    height: 30px;
+  }
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
